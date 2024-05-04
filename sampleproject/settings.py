@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import pymysql
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -75,14 +76,16 @@ WSGI_APPLICATION = 'sampleproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+pymysql.install_as_MySQLdb()
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'AI-Chat',
+        'USER': 'admin',
+        'PASSWORD': 'PZ9hTANhjVWXgMhKpMk8',
+        'HOST': 'database-1.cxomhkynlhc4.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
+        
     }
 }
 
